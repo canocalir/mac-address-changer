@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 
 import subprocess
+import optparse
 
-#Replace value with device to change
+parser = optparse.OptionParser()
+parser.add_option("-i", "--interface", dest="interface", help="Interface to change its MAC address")
+parser.add_option("-m", "--mac", dest="new_mac", help="New MAC Address")
+
+parser.parse_args()
+
 interface = input("interface > ")
 
-#Replace value with desired MAC Address
 new_mac = input("new MAC > ")
 
 print("[+] Changing MAC Address for " + interface + " to " + new_mac)
